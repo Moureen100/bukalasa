@@ -1,5 +1,5 @@
 const Biodata = require('../models/Biodata');
-const User = require('../models/User');
+const User = require('../models/user');
 
 exports.saveBiodata = async (req, res) => {
     console.log('=== BIODATA SAVE REQUEST START ===');
