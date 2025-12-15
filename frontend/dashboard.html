@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - BUKALASA 2008 Alumni</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Dashboard Header -->
+        <div class="dashboard-header">
+            <div class="user-info">
+                <h2 id="userEmail">Welcome</h2>
+                <p>BUKALASA 2008 Alumni Portal</p>
+            </div>
+            <div class="btn-group" style="width: auto; margin: 0;">
+                <a href="alumni-dashboard.html" class="btn btn-small" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                    <i class="fas fa-users"></i> Alumni Network
+                </a>
+                <a href="bio-data.html" class="btn btn-small">
+                    <i class="fas fa-user-edit"></i> Edit Profile
+                </a>
+                <button id="logoutBtn" class="btn btn-danger btn-small">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <i class="fas fa-user-graduate stat-icon"></i>
+                <div class="stat-number">2008</div>
+                <div class="stat-label">Graduation Year</div>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-users stat-icon"></i>
+                <div class="stat-number">150+</div>
+                <div class="stat-label">Alumni Network</div>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-calendar-check stat-icon"></i>
+                <div class="stat-number">5</div>
+                <div class="stat-label">Upcoming Events</div>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-handshake stat-icon"></i>
+                <div class="stat-number">12</div>
+                <div class="stat-label">Recent Connections</div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-id-card"></i>
+                <div>
+                    <h2 class="card-title">Your Profile Information</h2>
+                    <p class="card-subtitle">Complete your profile to connect with fellow alumni</p>
+                </div>
+            </div>
+
+            <div id="biodataDisplay">
+                <!-- Biodata will be loaded here -->
+            </div>
+        </div>
+
+        <!-- Announcements -->
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-bullhorn"></i>
+                <div>
+                    <h2 class="card-title">Latest Announcements</h2>
+                    <p class="card-subtitle">Stay updated with alumni news and events</p>
+                </div>
+            </div>
+
+            <div class="profile-grid">
+                <div class="info-group">
+                    <div class="info-item">
+                        <div class="info-label">
+                            <i class="fas fa-calendar-check"></i> Annual Reunion 2024
+                        </div>
+                        <p style="color: var(--gray); font-size: 0.95rem; line-height: 1.6;">
+                            Join us for the annual Bukalasa 2008 reunion on December 15, 2024 at the school campus.
+                        </p>
+                        <small style="color: var(--primary); display: block; margin-top: 10px;">
+                            <i class="fas fa-clock"></i> Posted: Dec 1, 2024
+                        </small>
+                    </div>
+                </div>
+
+                <div class="info-group">
+                    <div class="info-item">
+                        <div class="info-label">
+                            <i class="fas fa-database"></i> Database Update
+                        </div>
+                        <p style="color: var(--gray); font-size: 0.95rem; line-height: 1.6;">
+                            Please ensure your contact information is up to date for better communication.
+                        </p>
+                        <small style="color: var(--primary); display: block; margin-top: 10px;">
+                            <i class="fas fa-clock"></i> Posted: Nov 25, 2024
+                        </small>
+                    </div>
+                </div>
+
+                <div class="info-group">
+                    <div class="info-item">
+                        <div class="info-label">
+                            <i class="fas fa-network-wired"></i> Networking Event
+                        </div>
+                        <p style="color: var(--gray); font-size: 0.95rem; line-height: 1.6;">
+                            Professional networking event scheduled for January 20, 2025 in Kampala.
+                        </p>
+                        <small style="color: var(--primary); display: block; margin-top: 10px;">
+                            <i class="fas fa-clock"></i> Posted: Nov 20, 2024
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- View Biodata Section -->
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-eye"></i>
+                <div>
+                    <h2 class="card-title">View Your Biodata</h2>
+                    <p class="card-subtitle">Review and manage your profile information</p>
+                </div>
+            </div>
+
+            <div class="profile-grid">
+                <div class="info-group">
+                    <div class="info-item" style="text-align: center;">
+                        <div style="font-size: 2.5rem; color: var(--primary); margin-bottom: 15px;">
+                            <i class="fas fa-id-card"></i>
+                        </div>
+                        <h3 style="color: var(--primary); margin-bottom: 10px;">View Profile</h3>
+                        <p style="color: var(--gray); margin-bottom: 15px;">See your complete biodata in a formatted view</p>
+                        <a href="view-biodata.html" class="btn btn-small" style="width: 100%;">
+                            <i class="fas fa-eye"></i> View My Biodata
+                        </a>
+                    </div>
+                </div>
+
+                <div class="info-group">
+                    <div class="info-item" style="text-align: center;">
+                        <div style="font-size: 2.5rem; color: var(--primary); margin-bottom: 15px;">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 style="color: var(--primary); margin-bottom: 10px;">Alumni Network</h3>
+                        <p style="color: var(--gray); margin-bottom: 15px;">Connect with fellow alumni worldwide</p>
+                        <a href="alumni-dashboard.html" class="btn btn-small" style="width: 100%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                            <i class="fas fa-network-wired"></i> Go to Network
+                        </a>
+                    </div>
+                </div>
+
+                <div class="info-group">
+                    <div class="info-item" style="text-align: center;">
+                        <div style="font-size: 2.5rem; color: var(--primary); margin-bottom: 15px;">
+                            <i class="fas fa-share-alt"></i>
+                        </div>
+                        <h3 style="color: var(--primary); margin-bottom: 10px;">Share Profile</h3>
+                        <p style="color: var(--gray); margin-bottom: 15px;">Share your profile with other alumni</p>
+                        <button onclick="shareProfile()" class="btn btn-small" style="width: 100%;">
+                            <i class="fas fa-share"></i> Share Profile
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Alumni Dashboard</h3>
+                    <p>Manage your profile and stay connected with the BUKALASA 2008 community.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Quick Access</h3>
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        <a href="alumni-dashboard.html" class="footer-link">Alumni Network</a>
+                        <a href="dashboard.html" class="footer-link">Dashboard</a>
+                        <a href="bio-data.html" class="footer-link">Update Profile</a>
+                        <a href="view-biodata.html" class="footer-link">View Biodata</a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Contact Support</h3>
+                    <ul class="contact-list">
+                        <li class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>support@bukalasa2008.org</span>
+                        </li>
+                        <li class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+256 700 123 456</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 BUKALASA 2008 OB'S DIASPORA. Alumni Portal v2.0</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/auth.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script>
+        // Share profile function
+        function shareProfile() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'My Bukalasa 2008 Profile',
+                    text: 'Check out my Bukalasa 2008 alumni profile',
+                    url: window.location.href
+                })
+                .then(() => console.log('Profile shared successfully'))
+                .catch(error => console.log('Error sharing:', error));
+            } else {
+                alert('Share feature not supported in your browser');
+            }
+        }
+    </script>
+</body>
+</html>

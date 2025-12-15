@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Profile - BUKALASA 2008 Alumni</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="main-header" style="margin-bottom: 30px;">
+            <div class="header-content">
+                <div class="logo-container">
+                    <img src="https://via.placeholder.com/90/2e7d32/ffffff?text=B2008" alt="Bukalasa Logo" class="logo">
+                </div>
+                <h1>Complete Your Profile</h1>
+                <p class="subtitle">Required for full dashboard access</p>
+            </div>
+        </header>
+
+        <!-- Bio-data Form -->
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-user-edit"></i>
+                <div>
+                    <h2 class="card-title">Personal Information</h2>
+                    <p class="card-subtitle">Please provide your details to complete registration</p>
+                </div>
+            </div>
+
+            <div style="margin-bottom: 20px;">
+                <a href="alumni-dashboard.html" class="btn btn-small" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); margin-bottom: 10px;">
+                    <i class="fas fa-users"></i> Go to Alumni Network
+                </a>
+            </div>
+
+            <form id="bioDataForm">
+                <!-- Personal Information -->
+                <div style="margin-bottom: 40px;">
+                    <h3 style="color: var(--primary); margin-bottom: 25px; padding-bottom: 15px; border-bottom: 2px solid var(--light);">
+                        <i class="fas fa-user"></i> Personal Details
+                    </h3>
+                    
+                    <div class="profile-grid">
+                        <div class="form-group">
+                            <label for="surname" class="form-label">
+                                <i class="fas fa-id-card"></i> Surname <span class="required">*</span>
+                            </label>
+                            <input type="text" id="surname" name="surname" class="form-control" required placeholder="Enter your surname">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="middleName" class="form-label">
+                                <i class="fas fa-user"></i> Middle Name (Optional)
+                            </label>
+                            <input type="text" id="middleName" name="middleName" class="form-control" placeholder="Enter middle name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="secondName" class="form-label">
+                                <i class="fas fa-id-card"></i> Second Name <span class="required">*</span>
+                            </label>
+                            <input type="text" id="secondName" name="secondName" class="form-control" required placeholder="Enter your second name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="age" class="form-label">
+                                <i class="fas fa-birthday-cake"></i> Age <span class="required">*</span>
+                            </label>
+                            <input type="number" id="age" name="age" class="form-control" required min="18" max="100" placeholder="Your age">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="maritalStatus" class="form-label">
+                                <i class="fas fa-heart"></i> Marital Status <span class="required">*</span>
+                            </label>
+                            <select id="maritalStatus" name="maritalStatus" class="form-control" required>
+                                <option value="">Select status</option>
+                                <option value="Single">Single</option>
+                                <option value="Married">Married</option>
+                                <option value="Divorced">Divorced</option>
+                                <option value="Widowed">Widowed</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="gender" class="form-label">
+                                <i class="fas fa-venus-mars"></i> Gender <span class="required">*</span>
+                            </label>
+                            <select id="gender" name="gender" class="form-control" required>
+                                <option value="">Select gender</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Information -->
+                <div style="margin-bottom: 40px;">
+                    <h3 style="color: var(--primary); margin-bottom: 25px; padding-bottom: 15px; border-bottom: 2px solid var(--light);">
+                        <i class="fas fa-address-book"></i> Contact Information
+                    </h3>
+                    
+                    <div class="profile-grid">
+                        <div class="form-group">
+                            <label for="telephone" class="form-label">
+                                <i class="fas fa-phone"></i> Telephone <span class="required">*</span>
+                            </label>
+                            <input type="tel" id="telephone" name="telephone" class="form-control" required placeholder="+256 XXX XXX XXX">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-label">
+                                <i class="fas fa-envelope"></i> Email <span class="required">*</span>
+                            </label>
+                            <input type="email" id="email" name="email" class="form-control" required placeholder="your.email@example.com">
+                        </div>
+
+                        <div class="form-group" style="grid-column: span 2;">
+                            <label for="address" class="form-label">
+                                <i class="fas fa-map-marker-alt"></i> Address <span class="required">*</span>
+                            </label>
+                            <textarea id="address" name="address" class="form-control" required placeholder="Your complete address" rows="3"></textarea>
+                        </div>
+
+                        <div class="form-group" style="grid-column: span 2;">
+                            <label for="nextOfKin" class="form-label">
+                                <i class="fas fa-users"></i> Next of Kin <span class="required">*</span>
+                            </label>
+                            <input type="text" id="nextOfKin" name="nextOfKin" class="form-control" required placeholder="Full name of next of kin">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Actions -->
+                <div class="form-group" style="margin-top: 40px;">
+                    <div style="text-align: center;">
+                        <button type="submit" class="btn" style="max-width: 400px;">
+                            <i class="fas fa-save"></i> Save & Continue to Dashboard
+                        </button>
+                        <p style="color: var(--gray); margin-top: 15px; font-size: 0.9rem;">
+                            <i class="fas fa-info-circle"></i> Fields marked with <span class="required">*</span> are required
+                        </p>
+                    </div>
+                </div>
+            </form>
+
+            <div class="links" style="margin-top: 30px;">
+                <a href="alumni-dashboard.html" class="link">
+                    <i class="fas fa-users"></i> Alumni Network
+                </a>
+                <span class="link-divider">•</span>
+                <a href="dashboard.html" class="link">
+                    <i class="fas fa-arrow-left"></i> Back to Dashboard
+                </a>
+                <span class="link-divider">•</span>
+                <button id="logoutBtn" class="link" style="background: none; border: none; font: inherit; cursor: pointer;">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Complete Your Profile</h3>
+                    <p>Your information helps us keep the alumni directory updated and connected.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Need Assistance?</h3>
+                    <ul class="contact-list">
+                        <li class="contact-item">
+                            <i class="fas fa-headset"></i>
+                            <span>Support: support@bukalasa2008.org</span>
+                        </li>
+                        <li class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+256 700 123 456</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        <a href="alumni-dashboard.html" class="footer-link">Alumni Network</a>
+                        <a href="dashboard.html" class="footer-link">Dashboard</a>
+                        <a href="view-biodata.html" class="footer-link">View Biodata</a>
+                        <a href="#" class="footer-link">Privacy Policy</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 BUKALASA 2008 OB'S DIASPORA. Profile Completion Required</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/auth.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

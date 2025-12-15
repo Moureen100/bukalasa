@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account - BUKALASA 2008 Alumni</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .progress-steps {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 40px 0;
+            gap: 20px;
+        }
+        
+        .step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .step-circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: var(--gray);
+            border: 3px solid var(--light);
+            transition: var(--transition);
+        }
+        
+        .step.active .step-circle {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        
+        .step.completed .step-circle {
+            background: var(--success);
+            color: white;
+            border-color: var(--success);
+        }
+        
+        .step-label {
+            font-size: 0.9rem;
+            color: var(--gray);
+            font-weight: 500;
+        }
+        
+        .step.active .step-label {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        .step-line {
+            flex: 1;
+            height: 3px;
+            background: var(--light);
+            margin: 0 10px;
+        }
+        
+        .password-strength {
+            margin-top: 10px;
+        }
+        
+        .strength-meter {
+            height: 6px;
+            background: var(--light);
+            border-radius: 3px;
+            overflow: hidden;
+            margin-bottom: 5px;
+        }
+        
+        .strength-fill {
+            height: 100%;
+            width: 0%;
+            transition: width 0.3s ease;
+            border-radius: 3px;
+        }
+        
+        .strength-text {
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+        
+        .terms-checkbox {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin: 20px 0;
+            padding: 15px;
+            background: var(--light);
+            border-radius: 10px;
+        }
+        
+        .terms-checkbox input[type="checkbox"] {
+            margin-top: 3px;
+            width: auto;
+        }
+        
+        .terms-label {
+            font-size: 0.95rem;
+            color: var(--dark);
+            line-height: 1.5;
+        }
+        
+        .terms-label a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .terms-label a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Success animation */
+        @keyframes successPulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .success-pulse {
+            animation: successPulse 2s infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="main-header" style="margin-bottom: 30px;">
+            <div class="header-content">
+                <div class="logo-container">
+                    <img src="https://via.placeholder.com/90/2e7d32/ffffff?text=B2008" alt="Bukalasa Logo" class="logo">
+                </div>
+                <h1>Join Our Alumni Network</h1>
+                <p class="subtitle">Create your account in minutes</p>
+            </div>
+        </header>
+
+        <!-- Progress Steps -->
+        <div class="progress-steps">
+            <div class="step active">
+                <div class="step-circle">
+                    <i class="fas fa-user-plus"></i>
+                </div>
+                <div class="step-label">Create Account</div>
+            </div>
+            
+            <div class="step-line"></div>
+            
+            <div class="step">
+                <div class="step-circle">
+                    <i class="fas fa-user-edit"></i>
+                </div>
+                <div class="step-label">Complete Profile</div>
+            </div>
+            
+            <div class="step-line"></div>
+            
+            <div class="step">
+                <div class="step-circle">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <div class="step-label">Welcome!</div>
+            </div>
+        </div>
+
+        <!-- Signup Form -->
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-user-graduate"></i>
+                <div>
+                    <h2 class="card-title">Create Your Account</h2>
+                    <p class="card-subtitle">Join 150+ Bukalasa 2008 Alumni</p>
+                </div>
+            </div>
+
+            <form id="registerForm">
+                <!-- Personal Info -->
+                <div style="margin-bottom: 30px;">
+                    <h3 style="color: var(--primary); margin-bottom: 20px; padding-bottom: 15px; border-bottom: 2px solid var(--light);">
+                        <i class="fas fa-user"></i> Personal Information
+                    </h3>
+                    
+                    <div class="profile-grid">
+                        <div class="form-group">
+                            <label for="email" class="form-label">
+                                <i class="fas fa-envelope"></i> Email Address <span class="required">*</span>
+                            </label>
+                            <input type="email" id="email" name="email" class="form-control" required 
+                                   placeholder="your.email@example.com">
+                            <small style="color: var(--gray); font-size: 0.85rem; display: block; margin-top: 5px;">
+                                We'll use this for all communications
+                            </small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="fullName" class="form-label">
+                                <i class="fas fa-user-circle"></i> Full Name <span class="required">*</span>
+                            </label>
+                            <input type="text" id="fullName" name="fullName" class="form-control" required 
+                                   placeholder="John M. Doe">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Account Security -->
+                <div style="margin-bottom: 30px;">
+                    <h3 style="color: var(--primary); margin-bottom: 20px; padding-bottom: 15px; border-bottom: 2px solid var(--light);">
+                        <i class="fas fa-shield-alt"></i> Account Security
+                    </h3>
+                    
+                    <div class="profile-grid">
+                        <div class="form-group">
+                            <label for="password" class="form-label">
+                                <i class="fas fa-lock"></i> Password <span class="required">*</span>
+                            </label>
+                            <div class="password-container">
+                                <input type="password" id="password" name="password" class="form-control" required 
+                                       placeholder="Create a strong password" 
+                                       oninput="checkPasswordStrength(this.value)">
+                                <button type="button" class="password-toggle" onclick="togglePasswordVisibility('password')">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                            
+                            <div class="password-strength">
+                                <div class="strength-meter">
+                                    <div class="strength-fill" id="strengthFill"></div>
+                                </div>
+                                <div class="strength-text" id="strengthText">Password strength: None</div>
+                            </div>
+                            
+                            <small style="color: var(--gray); font-size: 0.85rem; display: block; margin-top: 8px;">
+                                <i class="fas fa-info-circle"></i> Use at least 8 characters with uppercase, lowercase, and numbers
+                            </small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confirmPassword" class="form-label">
+                                <i class="fas fa-lock"></i> Confirm Password <span class="required">*</span>
+                            </label>
+                            <div class="password-container">
+                                <input type="password" id="confirmPassword" name="confirmPassword" class="form-control" required 
+                                       placeholder="Re-enter your password">
+                                <button type="button" class="password-toggle" onclick="togglePasswordVisibility('confirmPassword')">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                            <div id="passwordMatch" style="font-size: 0.85rem; margin-top: 5px;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Terms and Conditions -->
+                <div class="terms-checkbox">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms" class="terms-label">
+                        I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>. 
+                        I understand that this platform is exclusively for Bukalasa 2008 alumni.
+                    </label>
+                </div>
+
+                <!-- Form Actions -->
+                <div class="form-group" style="margin-top: 30px;">
+                    <button type="submit" class="btn">
+                        <i class="fas fa-user-plus"></i> Create My Account
+                    </button>
+                </div>
+
+                <div style="text-align: center; margin-top: 25px;">
+                    <div style="color: var(--gray); font-size: 0.95rem; margin-bottom: 15px;">
+                        Already have an account?
+                    </div>
+                    <a href="login.html" class="btn btn-secondary btn-small">
+                        <i class="fas fa-sign-in-alt"></i> Login Instead
+                    </a>
+                </div>
+            </form>
+        </div>
+
+        <!-- Benefits Section -->
+        <div class="card" style="margin-top: 30px;">
+            <div class="card-header">
+                <i class="fas fa-star"></i>
+                <div>
+                    <h2 class="card-title">Why Join Our Network?</h2>
+                    <p class="card-subtitle">Benefits of being a registered alumni</p>
+                </div>
+            </div>
+
+            <div class="profile-grid">
+                <div class="info-group">
+                    <div class="info-item" style="text-align: center;">
+                        <div style="font-size: 2.5rem; color: var(--primary); margin-bottom: 15px;">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 style="color: var(--primary); margin-bottom: 10px;">Connect</h3>
+                        <p style="color: var(--gray);">Reconnect with classmates and build your professional network</p>
+                    </div>
+                </div>
+
+                <div class="info-group">
+                    <div class="info-item" style="text-align: center;">
+                        <div style="font-size: 2.5rem; color: var(--primary); margin-bottom: 15px;">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <h3 style="color: var(--primary); margin-bottom: 10px;">Events</h3>
+                        <p style="color: var(--gray);">Get invites to reunions, networking events, and alumni gatherings</p>
+                    </div>
+                </div>
+
+                <div class="info-group">
+                    <div class="info-item" style="text-align: center;">
+                        <div style="font-size: 2.5rem; color: var(--primary); margin-bottom: 15px;">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <h3 style="color: var(--primary); margin-bottom: 10px;">Opportunities</h3>
+                        <p style="color: var(--gray);">Access job opportunities, mentorship, and career support</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Join Our Community</h3>
+                    <p>Be part of the growing Bukalasa 2008 alumni network. Together we grow stronger.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Need Help?</h3>
+                    <ul class="contact-list">
+                        <li class="contact-item">
+                            <i class="fas fa-headset"></i>
+                            <span>Registration Support</span>
+                        </li>
+                        <li class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>support@bukalasa2008.org</span>
+                        </li>
+                        <li class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+256 700 123 456</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        <a href="index.html" class="footer-link">Home Page</a>
+                        <a href="login.html" class="footer-link">Login</a>
+                        <a href="#" class="footer-link">FAQ</a>
+                        <a href="#" class="footer-link">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <a href="#" class="footer-link">Privacy Policy</a>
+                <a href="#" class="footer-link">Terms of Service</a>
+                <a href="#" class="footer-link">Cookie Policy</a>
+                <a href="#" class="footer-link">Code of Conduct</a>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 BUKALASA 2008 OB'S DIASPORA. Exclusively for Bukalasa 2008 Alumni.</p>
+                <p style="margin-top: 10px; font-size: 0.85rem;">Registration verified by alumni committee</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Password strength checker
+        function checkPasswordStrength(password) {
+            const strengthFill = document.getElementById('strengthFill');
+            const strengthText = document.getElementById('strengthText');
+            
+            let strength = 0;
+            let text = 'Password strength: ';
+            let color = '#f44336'; // Red
+            
+            // Check length
+            if (password.length >= 8) strength += 25;
+            
+            // Check for lowercase
+            if (/[a-z]/.test(password)) strength += 25;
+            
+            // Check for uppercase
+            if (/[A-Z]/.test(password)) strength += 25;
+            
+            // Check for numbers
+            if (/[0-9]/.test(password)) strength += 25;
+            
+            // Update strength meter
+            strengthFill.style.width = strength + '%';
+            
+            // Update text and color
+            if (strength === 0) {
+                text += 'None';
+                color = '#f44336';
+            } else if (strength <= 50) {
+                text += 'Weak';
+                color = '#f44336';
+            } else if (strength <= 75) {
+                text += 'Good';
+                color = '#ff9800';
+            } else {
+                text += 'Strong';
+                color = '#4caf50';
+            }
+            
+            strengthFill.style.background = color;
+            strengthText.textContent = text;
+            strengthText.style.color = color;
+            
+            // Check password match
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const matchDiv = document.getElementById('passwordMatch');
+            
+            if (confirmPassword) {
+                if (password === confirmPassword) {
+                    matchDiv.innerHTML = '<span style="color:#4caf50"><i class="fas fa-check-circle"></i> Passwords match</span>';
+                } else {
+                    matchDiv.innerHTML = '<span style="color:#f44336"><i class="fas fa-times-circle"></i> Passwords do not match</span>';
+                }
+            } else {
+                matchDiv.innerHTML = '';
+            }
+        }
+        
+        // Confirm password match checker
+        document.getElementById('confirmPassword').addEventListener('input', function() {
+            const password = document.getElementById('password').value;
+            const confirmPassword = this.value;
+            const matchDiv = document.getElementById('passwordMatch');
+            
+            if (confirmPassword) {
+                if (password === confirmPassword) {
+                    matchDiv.innerHTML = '<span style="color:#4caf50"><i class="fas fa-check-circle"></i> Passwords match</span>';
+                } else {
+                    matchDiv.innerHTML = '<span style="color:#f44336"><i class="fas fa-times-circle"></i> Passwords do not match</span>';
+                }
+            } else {
+                matchDiv.innerHTML = '';
+            }
+        });
+        
+        // Password toggle function
+        function togglePasswordVisibility(inputId) {
+            const passwordInput = document.getElementById(inputId);
+            const toggleIcon = document.querySelector(`[onclick="togglePasswordVisibility('${inputId}')"] i`);
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                toggleIcon.classList.remove('fa-eye');
+                toggleIcon.classList.add('fa-eye-slash');
+            } else {
+                passwordInput.type = 'password';
+                toggleIcon.classList.remove('fa-eye-slash');
+                toggleIcon.classList.add('fa-eye');
+            }
+        }
+        
+        // Function to clear the form
+        function clearSignupForm() {
+            console.log('Clearing signup form...');
+            
+            // Clear all input fields
+            document.getElementById('email').value = '';
+            document.getElementById('fullName').value = '';
+            document.getElementById('password').value = '';
+            document.getElementById('confirmPassword').value = '';
+            document.getElementById('terms').checked = false;
+            
+            // Reset password strength meter
+            document.getElementById('strengthFill').style.width = '0%';
+            document.getElementById('strengthText').textContent = 'Password strength: None';
+            document.getElementById('strengthText').style.color = '';
+            
+            // Clear password match message
+            document.getElementById('passwordMatch').innerHTML = '';
+            
+            // Reset all input borders to default
+            const inputs = document.querySelectorAll('.form-control');
+            inputs.forEach(input => {
+                input.style.borderColor = '';
+            });
+            
+            console.log('Form cleared successfully');
+        }
+        
+        // Function to show success animation
+        function showSuccessAnimation() {
+            const cardHeader = document.querySelector('.card-header i');
+            const submitBtn = document.querySelector('#registerForm .btn i');
+            
+            // Add success classes for animation
+            cardHeader.classList.add('success-pulse');
+            submitBtn.className = 'fas fa-check-circle success-pulse';
+            
+            // Change button text
+            const btnText = document.querySelector('#registerForm .btn');
+            const textSpan = btnText.querySelector('span') || document.createElement('span');
+            textSpan.textContent = ' Account Created Successfully!';
+            if (!btnText.querySelector('span')) {
+                btnText.appendChild(textSpan);
+            }
+            
+            // Change button color to success
+            btnText.style.background = 'linear-gradient(135deg, #4caf50 0%, #2e7d32 100%)';
+            
+            // Reset after 3 seconds
+            setTimeout(() => {
+                cardHeader.classList.remove('success-pulse');
+                submitBtn.className = 'fas fa-user-plus';
+                btnText.innerHTML = '<i class="fas fa-user-plus"></i> Create My Account';
+                btnText.style.background = '';
+            }, 3000);
+        }
+        
+        // Form validation and submission
+        document.getElementById('registerForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const email = document.getElementById('email').value.trim();
+            const fullName = document.getElementById('fullName').value.trim();
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const terms = document.getElementById('terms').checked;
+            
+            // Validation
+            if (!email || !fullName || !password || !confirmPassword) {
+                showMessage('Please fill in all required fields', 'error');
+                return;
+            }
+            
+            if (!terms) {
+                showMessage('Please agree to the Terms of Service and Privacy Policy', 'error');
+                return;
+            }
+            
+            if (password !== confirmPassword) {
+                showMessage('Passwords do not match', 'error');
+                return;
+            }
+            
+            if (password.length < 8) {
+                showMessage('Password must be at least 8 characters long', 'error');
+                return;
+            }
+            
+            // Disable submit button and show loading
+            const submitBtn = document.querySelector('#registerForm .btn');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<div class="spinner"></div> Creating Account...';
+            submitBtn.disabled = true;
+            
+            try {
+                // Call registration API
+                const response = await fetch('http://localhost:3000/api/auth/register', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ email, password })
+                });
+                
+                const result = await response.json();
+                console.log('Registration response:', result);
+                
+                if (result.success) {
+                    // Show success animation
+                    showSuccessAnimation();
+                    
+                    // Show success message
+                    showMessage('Account created successfully! Redirecting to login...', 'success');
+                    
+                    // Clear the form
+                    clearSignupForm();
+                    
+                    // Update progress steps
+                    document.querySelectorAll('.step')[0].classList.add('completed');
+                    document.querySelectorAll('.step')[1].classList.add('active');
+                    
+                    // Redirect to login after 3 seconds
+                    setTimeout(() => {
+                        window.location.href = 'login.html';
+                    }, 3000);
+                    
+                } else {
+                    showMessage(result.message || 'Registration failed. Please try again.', 'error');
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                }
+                
+            } catch (error) {
+                console.error('Registration error:', error);
+                showMessage('Network error. Please check your connection and try again.', 'error');
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }
+        });
+        
+        // Show message function
+        function showMessage(message, type) {
+            // Remove existing messages
+            const existingMessage = document.querySelector('.message');
+            if (existingMessage) {
+                existingMessage.remove();
+            }
+            
+            // Create new message element
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${type}`;
+            
+            // Add icon based on message type
+            const icon = type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle';
+            
+            messageDiv.innerHTML = `
+                <i class="fas ${icon}"></i>
+                <span>${message}</span>
+            `;
+            
+            // Insert message
+            const container = document.querySelector('.container');
+            if (container) {
+                container.insertBefore(messageDiv, container.firstChild);
+            }
+            
+            // Auto-remove after 5 seconds
+            setTimeout(() => {
+                if (messageDiv.parentNode) {
+                    messageDiv.remove();
+                }
+            }, 5000);
+        }
+        
+        // Auto-hide success message after redirect delay
+        setTimeout(() => {
+            const successMsg = document.querySelector('.message.success');
+            if (successMsg) {
+                successMsg.remove();
+            }
+        }, 2800);
+    </script>
+</body>
+</html>
