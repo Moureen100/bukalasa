@@ -1,4 +1,4 @@
-const Biodata = require('../models/Biodata');
+const Biodata = require('../models/biodata');
 const User = require('../models/user');
 
 exports.saveBiodata = async (req, res) => {

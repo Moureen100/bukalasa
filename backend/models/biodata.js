@@ -1,5 +1,5 @@
 const db = require('../config/db');
-const User = require('./User');
+const User = require('./user');
 
 class Biodata {
     static async createOrUpdate(user_id, data) {
