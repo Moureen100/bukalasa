@@ -1,6 +1,6 @@
 class Auth {
     constructor() {
-        this.baseUrl = 'http://localhost:3000/api/auth';
+        this.baseUrl = '/api/auth';
         this.token = localStorage.getItem('token');
         this.userId = localStorage.getItem('userId');
     }
@@ -198,7 +198,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (result.success) {
                 showMessage('Registration successful! Redirecting to login...', 'success');
                 setTimeout(() => {
-                    window.location.href = 'alumni-dashboard.html';
+                    window.location.href = 'login.html';
                 }, 1500);
             } else {
                 showMessage(result.message, 'error');
